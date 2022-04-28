@@ -8,11 +8,7 @@ import java.awt.event.KeyListener;
 public class Gameplay extends JPanel implements KeyListener, ActionListener {
 
     //HELLO GIT
-
-    private int x = 150;
-    private int y = 300;
-
-    private int VelY = -20;
+    private Bird bird = new Bird(150,300);
 
     private boolean isPlaying = false;
 
@@ -31,22 +27,21 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
         g.fillRect(0, 0, 400, 700);
 
         if (!isPlaying){
-            g.setColor(Color.red);
-            g.fillRect(100, 100, 100, 100);
+            g.setColor(Color.yellow);
+            g.fillRect(100, 100, 200, 100);
+            Font myFont = new Font ("Arial", 1, 28);
+            g.setFont (myFont);
+            g.setColor(Color.black);
+            g.drawString("START GAME",108,160);
         }
 
-        g.setColor(Color.green);
-        g.fillRect(x, y, 20, 20);
+        bird.draw((Graphics2D) g);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (isPlaying){
-            VelY+=1;
-            if (VelY > 15){
-                VelY=15;
-            }
-            y+=VelY;
+            bird.move();
         }
 
 
@@ -64,7 +59,7 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
             if (!isPlaying) {
                 isPlaying = true;
             } else {
-                VelY = -20;
+                bird.jump();
             }
         }
     }
