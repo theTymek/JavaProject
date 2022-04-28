@@ -25,7 +25,7 @@ public class Bird {
         y+=velY;
     }
     public void draw(Graphics2D g){
-        g.setColor(Color.green);
-        g.fillRect(x, y, 20, 20);
+        g.setColor(Color.orange);
+        g.fillRect(x, y, 30, 20);
     }
 }

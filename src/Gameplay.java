@@ -28,7 +28,7 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
 
         if (!isPlaying){
             g.setColor(Color.yellow);
-            g.fillRect(100, 100, 200, 100);
+            g.fillRoundRect(100, 100, 200, 100,30,30);
             Font myFont = new Font ("Arial", 1, 28);
             g.setFont (myFont);
             g.setColor(Color.black);
