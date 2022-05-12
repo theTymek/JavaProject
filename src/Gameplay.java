@@ -9,6 +9,7 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
 
     //HELLO GIT
     private Bird bird = new Bird(150,300);
+    private Pipe Piep = new Pipe(600,400);
 
     private boolean isPlaying = false;
 
@@ -36,12 +37,14 @@ public class Gameplay extends JPanel implements KeyListener, ActionListener {
         }
 
         bird.draw((Graphics2D) g);
+        Piep.draw((Graphics2D) g);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         if (isPlaying){
             bird.move();
+            Piep.move();
         }
 
 
